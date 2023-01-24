@@ -11,6 +11,7 @@ const karta = {
 	data() {
 		return {
 			cards: [],
+            deck: [],
             classes: info.classes,
             areCardsVisible: false
 		}
@@ -26,16 +27,16 @@ const karta = {
                 console.log(response)
             })
 			.catch(err => console.error(err));
-            console.log(this.classes)
             this.classes = []
-            console.log("lalal")
-            console.log(this.classes)
             
 		},
         backToClasses(){
             this.areCardsVisible = false
             this.cards = []
             this.classes = info.classes
+        },
+        addCardToDeck(card){
+            this.deck.push(card)
         }
 	},
 	template: `
@@ -57,54 +58,13 @@ const karta = {
 
     <div v-show="areCardsVisible" class="middle">
         <div class= "left-panel">
-            <div class="element" v-for="c in cards">
+            <div class="element" v-for="c in cards" @click="addCardToDeck(c)">
                 <img v-bind:src="c.img">
             </div>
         </div>
 
         <div class= "right-panel">
-        <div class="list-elem">lalalal 1</div>
-        <div class="list-elem">lalalal 2</div>
-        <div class="list-elem">lalalal 3</div>
-        <div class="list-elem">lalalal 4</div>
-        <div class="list-elem">lalalal 5</div>
-        <div class="list-elem">lalalal 6</div>
-        <div class="list-elem">lalalal 7</div>
-        <div class="list-elem">lalalal 8</div>
-        <div class="list-elem">lalalal 9</div>
-        <div class="list-elem">lalalal 10</div>
-        <div class="list-elem">lalalal 11</div>
-        <div class="list-elem">lalalal 12</div>
-        <div class="list-elem">lalalal 13</div>
-        <div class="list-elem">lalalal 14</div>
-        <div class="list-elem">lalalal 15</div>
-        <div class="list-elem">lalalal 16</div>
-        <div class="list-elem">lalalal 17</div>
-        <div class="list-elem">lalalal 18</div>
-        <div class="list-elem">lalalal 19</div>
-        <div class="list-elem">lalalal 20</div>
-        <div class="list-elem">lalalal 21</div>
-        <div class="list-elem">lalalal 22</div>
-        <div class="list-elem">lalalal 23</div>
-        <div class="list-elem">lalalal 24</div>
-        <div class="list-elem">lalalal 25</div>
-        <div class="list-elem">lalalal 26</div>
-        <div class="list-elem">lalalal 27</div>
-        <div class="list-elem">lalalal 28</div>
-        <div class="list-elem">lalalal 29</div>
-        <div class="list-elem">lalalal 30</div>
-        <div class="list-elem">lalalal 31</div>
-        <div class="list-elem">lalalal 32</div>
-        <div class="list-elem">lalalal 33</div>
-        <div class="list-elem">lalalal 34</div>
-        <div class="list-elem">lalalal 35</div>
-        <div class="list-elem">lalalal 36</div>
-        <div class="list-elem">lalalal 37</div>
-        <div class="list-elem">lalalal 38</div>
-        <div class="list-elem">lalalal 39</div>
-        <div class="list-elem">lalalal 40</div>
-        <div class="list-elem">lalalal 41</div>
-        <div class="list-elem">lalalal 42</div>
+            <div v-for="d in deck" class="list-elem">{{ d.name }}  {{ d.cost }}</div>
         </div>
     </div>
 	`	
