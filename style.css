@@ -1,4 +1,6 @@
-body {
+/* body {
+    padding: 0; 
+    margin: 0;
     display: flex;
     align-items: center; 
     margin-left: auto;
@@ -7,15 +9,11 @@ body {
 }
 
 
-#app {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 3%;
-}
+
 
 
 .container {
+    width: 100%;
     display: block;
     display: -webkit-flex;
     display: -moz-flex;
@@ -40,49 +38,193 @@ body {
     align-content: flex-end;   
 }
 
+.left-panel {
+    width: 70%;
+}
 
-.item {
+.right-panel {
+    width: 30%;
+}
+
+.card-item{
+    transform: scale(0.8);
     display: inline-block;
     display: box;
-    width: 33.3%;
-    /* background: url(https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/frame_class_portrait_hover-0fe18e7eeb22e9f78e7226fb438e6a8d12b78946b58ae5d735d7869714c62848a7772c8bc424c54063d749bdb6c96d7c83e1617694c5f79b15cf1656651551c7.png) center top no-repeat; */
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: contain;
-    image-rendering: url(https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/frame_class_portrait_hover-0fe18e7eeb22e9f78e7226fb438e6a8d12b78946b58ae5d735d7869714c62848a7772c8bc424c54063d749bdb6c96d7c83e1617694c5f79b15cf1656651551c7.png);
-    z-index: 0;
+    width: 25%;
+    height: min-content;
+
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
-.item image {
-    z-index: -1;
-    image-rendering: url(https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/frame_class_portrait_hover-0fe18e7eeb22e9f78e7226fb438e6a8d12b78946b58ae5d735d7869714c62848a7772c8bc424c54063d749bdb6c96d7c83e1617694c5f79b15cf1656651551c7.png);
+
+
+
+#center-logo {
+    transform: scale(0.8);
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+} */
+
+/* ---------------------------------------------------------------------------- */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #888;
+    color: #ffd601;
 }
 
-.item img {
-    z-index: -1;
+#app {
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    background: #888;
 }
 
-.item:hover {
-    /* content: "";
-    position: absolute;
-    top: 0px;
-    left: 0px;
+.middle {
+    padding-top: 100px;
+    display: flex;
     width: 100%;
-    height: 100%;
-    display: block; */
-    background: url(https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/frame_class_portrait_hover-0fe18e7eeb22e9f78e7226fb438e6a8d12b78946b58ae5d735d7869714c62848a7772c8bc424c54063d749bdb6c96d7c83e1617694c5f79b15cf1656651551c7.png) center top no-repeat;
-    border-image: url(https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/frame_class_portrait_hover-0fe18e7eeb22e9f78e7226fb438e6a8d12b78946b58ae5d735d7869714c62848a7772c8bc424c54063d749bdb6c96d7c83e1617694c5f79b15cf1656651551c7.png) 10px 10px;
-    /* background-position-x: center;
-    background-position-y: top;
-    background-repeat: no-repeat;
-    /* background-color: red; */
-    z-index: 1;
-    background-size: contain;
+    min-height: 500px;    
 }
 
+.left-panel {
+    width: 70%;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-image: url("https://i.pinimg.com/originals/98/46/d4/9846d483de3e43a563afa75f2e84709e.png");
+}
+
+.right-panel {
+    width: 24%;   
+    height: calc(100vh - 194px);
+    top: 100px;
+    right: 10%;
+    position: fixed;
+    overflow-y: scroll;  
+    background-image: url("https://i0.wp.com/www.innatthecrossroads.com/wp-content/uploads/2016/10/Wooden-background-texture-pattern-images-for-website-HD-template-PSD-free-download.jpg?fit=1200%2C775&ssl=1");
+}
+
+.element {
+    min-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.list-elem {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: max-content;
+}
+
+.top {
+    display: inline-flex;
+    width: 80%;
+    height: 100px;
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+    background: #591415;
+}
+
+.top-logo {
+    height: "100px"
+}
 
 
 h1 {
     margin-left: auto;
     margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    
 }
+
+h2 {
+    
+    padding-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    
+}
+
+.heroes {
+    padding-top: 100px;
+    padding-bottom: 10%;
+    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-image: url("https://i.pinimg.com/originals/98/46/d4/9846d483de3e43a563afa75f2e84709e.png");
+}
+
+.hero-item{
+    display: inline-block;
+    display: box;
+    width: 25%;
+
+    position: relative;
+    top: 0;
+    left: 0;
+    
+}
+
+.hero-image {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    width: 70%;
+    display: block;
+}
+
+.hero-image:hover + .hero-image2{
+    visibility: visible;
+}
+
+.hero-image2 {
+    width: 70%;
+    visibility: hidden;
+    margin: 0;
+    position: absolute;               /* 2 */
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+}
+
+.hero-image2:hover {
+    visibility: visible;
+}
+
+.back-button {
+
+}
+
+
+/* SCROLLBAR */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #555;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #ffd601;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #d5b201;
+  }

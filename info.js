@@ -45,11 +45,7 @@ const info =
         {
             "name": "Demon Hunter",
             "img": "https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/class_big_demonhunter-0c117e1eb40c92f3156352ef3b07de82321bb8dc4ea6629445beef3722aa4c623257a803b71f511bdf8e3734586abf4f68eb5975708b4d2e76f27cbed8b38f72.png"
-        },
-        {
-            "name": "Demon Hunter",
-            "img": "://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/class_big_demonhunter-0c117e1eb40c92f3156352ef3b07de82321bb8dc4ea6629445beef3722aa4c623257a803b71f511bdf8e3734586abf4f68eb5975708b4d2e76f27cbed8b38f72.png"
-        },
+        }
         // {
         //     "name": "Dream",
         //     "img": "https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/class_big_mage-d1cbb187de507978f25cf95e54e357660819979baa01de215c0c1aa30964c2befa740cdff4ea812b29d81b1b5d89d8697c8e9ee3f47596671ba3f3e3e0f9e5dd.png"
