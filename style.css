@@ -74,7 +74,7 @@ body {
     margin: 0;
     padding: 0;
     background: #888;
-    color: #ffd601;
+    color: #000000;
 }
 
 #app {
@@ -96,7 +96,7 @@ body {
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-image: url("https://i.pinimg.com/originals/98/46/d4/9846d483de3e43a563afa75f2e84709e.png");
+    background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/ui/parchment-f5126a8249a32eb235b139078b4cc13b5fb9d2c29b0e825569312681123d721a1f2e1addb4bad78f979933e561361e2ee2c5f5881ab4fef5385c66c6276c3b44.jpg");
 }
 
 .right-panel {
@@ -106,7 +106,7 @@ body {
     right: 10%;
     position: fixed;
     overflow-y: scroll;  
-    background-image: url("https://i0.wp.com/www.innatthecrossroads.com/wp-content/uploads/2016/10/Wooden-background-texture-pattern-images-for-website-HD-template-PSD-free-download.jpg?fit=1200%2C775&ssl=1");
+    background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/ui/parchment-f5126a8249a32eb235b139078b4cc13b5fb9d2c29b0e825569312681123d721a1f2e1addb4bad78f979933e561361e2ee2c5f5881ab4fef5385c66c6276c3b44.jpg");
 }
 
 .element {
@@ -131,7 +131,7 @@ body {
     position: fixed;
     margin-left: auto;
     margin-right: auto;
-    background: #591415;
+    background-image: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_filter_middle_tile-907853600f2b8dc11ae3acca94ff309f58b4959f380a6995e1b69b2d94f4bae5811b3ec588d56290599d59ddf6d00f0ce3fa9087c08ee8f7eabe843ed3646f9d.jpg");
 }
 
 .top-logo {
@@ -163,7 +163,7 @@ h2 {
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
-    background-image: url("https://i.pinimg.com/originals/98/46/d4/9846d483de3e43a563afa75f2e84709e.png");
+    background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/ui/parchment-f5126a8249a32eb235b139078b4cc13b5fb9d2c29b0e825569312681123d721a1f2e1addb4bad78f979933e561361e2ee2c5f5881ab4fef5385c66c6276c3b44.jpg");
 }
 
 .hero-item{
