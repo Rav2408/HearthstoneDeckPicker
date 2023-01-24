@@ -18,8 +18,11 @@ const karta = {
 		getCards(className) {
 			fetch('https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/' + className, options)
 			.then(response => response.json())
-			.then(response => response.filter(card => card.hasOwnProperty('img')))
-			.then(response => this.cards = response)
+			.then(response => response.filter(card => card.hasOwnProperty('img') && card.hasOwnProperty('type') && card.type != "Hero" && card.type != "Hero Power"))
+			.then(response => {
+                this.cards = response
+                console.log(response)
+            })
 			.catch(err => console.error(err));
 		}
 
@@ -27,12 +30,14 @@ const karta = {
 		
 	},
 	template: `
-    <div v-for="c in classes">
-        <button @click="getCards(c)">{{ c }}</button>
-	</div>
-	<div v-for="c in cards">
-		<img v-bind:src="c.img">
-	</div>
+    <div class="container">
+            <img class="item" v-for="c in classes" @click="getCards(c.name)" v-bind:src="c.img">
+    </div>
+    <div class="container">
+        <div class="item" v-for="c in cards">
+            <img v-bind:src="c.img">
+        </div>
+    </div>
 	`	
 }
 
