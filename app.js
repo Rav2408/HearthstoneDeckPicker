@@ -36,17 +36,42 @@ const karta = {
             this.classes = info.classes
         },
         addCardToDeck(card){
-            this.deck.push(card)
+            if(this.deck.length<30)
+            {
+                let repeat = 0
+                for( let i = 0; i < this.deck.length; i++){                     
+                    if ( this.deck[i] === card) { 
+                        repeat++; 
+                    }
+                }
+                if(repeat<2)
+                {
+                    this.deck.push(card)
+                } 
+            } 
+            console.log(this.deckCounter()); 
+        },
+        deckCounter()
+        {
+            return(this.deck.length + "/30");
+        },
+        generateName()
+        {
+            return ("New deck " + (this.getDecks().length+1))
         },
         saveDeck(name="default"){
-            //TODO trzeba zrobić ekran w którym będziemy podawać nazwę deku, może to być mały popup
+            //DONE//TODO trzeba zrobić ekran w którym będziemy podawać nazwę deku, może to być mały popup 
             //TODO trzeba zrobić ekran do przeglądania nazw istniejących już deków. Po wybraniu nazwy powinien się załadować.
-            //TODO walidacje jakiegoś dodawania, liczby kart 30 itp
+            //DONE//TODO walidacje jakiegoś dodawania, liczby kart 30 itp -------blokada do 30 i max 2 duplikaty, ale problem bo 2 te samy karty są wyswietlane na liscie dostepnych 
             //TODO Button do usunięcia karty z decku bo na razie jest to zrobione na luzie
             //TODO dodatkowe ekran z szczegółowym wyświetleniem informacji na temat karty
-            console.log(name)
-            
+            //TODO usuwanie chyba usuwa duzo naraz nwm xd
             let decks = this.getDecks()
+            let DeckName = prompt("Please enter deck name",this.generateName());
+            name = DeckName;
+            console.log(DeckName)
+            
+            
             console.log(decks)
             
             decks.push({
