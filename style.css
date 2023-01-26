@@ -73,26 +73,48 @@
 body {
     margin: 0;
     padding: 0;
-    background: #888;
-    color: #000000;
+    color: #d1b038;
+    background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/deck_bg-7456c142239cf279362e76d67865d342b52e330912931365349cf61fceacd4bcb9e63cb91adeab45ff020238fda831ceb898d556500088f2bbe31957917ae860.png");
+    background-size: 100% 100%;
+    background-position: 1000px;
 }
 
 #app {
     margin-left: auto;
     margin-right: auto;
     width: 80%;
-    background: #888;
+    background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/ui/parchment-f5126a8249a32eb235b139078b4cc13b5fb9d2c29b0e825569312681123d721a1f2e1addb4bad78f979933e561361e2ee2c5f5881ab4fef5385c66c6276c3b44.jpg");
+}
+
+#search-bar {
+    padding-left: 5%;
+    display: flex;
+    width: 100%;
+    height: 100px;
+    color: white;
+}
+
+#mana-point{
+
+}
+
+#mana-point p{
+    position: absolute;
+    top: 105px;
+    margin-left: 25px;
+    font-size: 32px;
+    z-index: 0;
 }
 
 .middle {
     padding-top: 100px;
     display: flex;
     width: 100%;
-    min-height: 500px;    
+    min-height: 2000px; 
 }
 
 .left-panel {
-    width: 70%;
+    width: 75%;
     display: inline-flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -100,12 +122,11 @@ body {
 }
 
 .right-panel {
-    width: 24%;   
+    width: 20%;   
     height: calc(100vh - 194px);
     top: 100px;
     right: 10%;
     position: fixed; 
-    
 }
 
 .deck-menu {
@@ -144,6 +165,25 @@ body {
     color: white;
 }
 
+.options-on-hover:hover .delete-on-hover {
+    display:block;
+}
+
+.delete-on-hover {
+    display: none;
+    position: absolute;
+    width: 10%;
+    top: 20%;
+    right: 2%;
+}
+
+.delete-on-hover:hover {
+    background-color: #ffd601;
+    border-radius: 20%;
+}
+
+
+
 .list-elem-cost {
     position: absolute;
     margin-top: auto;
@@ -176,6 +216,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     background-image: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_filter_middle_tile-907853600f2b8dc11ae3acca94ff309f58b4959f380a6995e1b69b2d94f4bae5811b3ec588d56290599d59ddf6d00f0ce3fa9087c08ee8f7eabe843ed3646f9d.jpg");
+    border-radius: 0 0 5% 5%;
+    z-index: 1;
 }
 
 .top-logo {
@@ -197,11 +239,12 @@ h2 {
     margin-left: auto;
     margin-right: auto;
     width: fit-content;
+    color: #000;
     
 }
 
 .heroes {
-    padding-top: 100px;
+    padding-top: 110px;
     padding-bottom: 10%;
     width: 100%;
     display: inline-flex;
@@ -248,8 +291,80 @@ h2 {
     visibility: visible;
 }
 
-.back-button {
 
+
+/* DECKS SELECTION MENU */
+.window-menu {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    z-index: 9;
+    background-color: #f1f1f1;
+    border: 1px solid #d3d3d3;
+    width: 42%;
+    height: 40%;
+    background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/bg_filter_middle_tile-907853600f2b8dc11ae3acca94ff309f58b4959f380a6995e1b69b2d94f4bae5811b3ec588d56290599d59ddf6d00f0ce3fa9087c08ee8f7eabe843ed3646f9d.jpg");
+    background-size: contain;
+    border-radius: 2%;
+    display: flex;
+}
+
+#window-wrapper {
+    width: 100%;
+    height: 100%;
+    background: url("https://d2q63o9r0h0ohi.cloudfront.net/images/deckbuilder/frame_class_selector-762abc4239b5e09a8f3c97aea6cd90910f9fc54de486d7d1121f46e4d3aff93be2a433110b2e46a09a10453ead3aa1fa8fec6adec6f76d036eae141c4cac0fd8.png");
+    z-index: 10;
+    background-size: 100% 100%;
+    border-radius: 2%;
+}
+
+.list {
+    margin-top: 8%;
+    height: 70%;
+    overflow-y: scroll; 
+}
+
+#decks-item {
+    position: relative;
+    width: 70%;
+    padding-left: 10%;
+    background: none;
+    border-radius: 0%;
+}
+
+.p-and-button {
+    display: flex;
+}
+
+
+
+.p-and-button p:hover {
+    color: #ffd601;
+}
+
+.close-button {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 5%;
+    height: 10%;
+    background: url("https://cdn-icons-png.flaticon.com/512/7159/7159094.png");
+    background-size: cover;
+    background-color: #f5b74d;
+    border-radius: 15%;
+}
+
+.delete-button {
+    background: url("https://cdn-icons-png.flaticon.com/512/7159/7159094.png");
+    background-size: cover;
+    background-color: #f5b74d;
+    border-radius: 15%;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    right: 10%;
 }
 
 
@@ -275,6 +390,69 @@ h2 {
   }
 
 /* BUTTON */
+#save-button {
+    position: fixed;
+    bottom: 2%;
+    right: 15%;
+}
+
+.top-button {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.hs-wrapper {
+    cursor: pointer;
+    width: 200px;
+    padding: 0 2px;
+    border-right: none;
+    border-left: none;
+    box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.35);
+    border-radius: 5px;
+}
+
+.hs-button {
+    display: block;
+    text-align: center;
+    border-radius: 2px;
+    border: solid 3px #795548;
+}
+
+.hs-text {
+    display: table-cell; width: 100%;
+    vertical-align: middle;
+    padding: 9px 24px;
+    padding: 0.6rem 1.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    text-shadow: 0 0 4px #000, 0 0 8px #000;
+    font-size: 20px;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+}
+
+.hs-border{
+    display: table;
+    padding: 3px;
+    border-radius: 2px;
+    height: 35px;
+    min-height: 35px;
+    width: 100%;
+    /* Font style */
+    text-transform: uppercase;
+    font-family: 'Fondamento', cursive;
+    font-weight: normal;
+    color: #fff;
+    text-decoration: none;
+    text-shadow: 1px 1px #000;
+    font-size: 17px;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
   .hs-wrapper.gold {
     background-color: #d8be52;
     background: linear-gradient(to bottom,
