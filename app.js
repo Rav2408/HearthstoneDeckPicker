@@ -15,12 +15,15 @@ const karta = {
             decks: [],
             classes: info.classes,
             className: undefined,
+            searchName: undefined,
             areCardsVisible: false,
             isDecksMenuVisible: false
 		}
 	},
 	methods: {
 		getCards(mana) {
+            console.log(mana)
+            
             this.areCardsVisible = true
             let url= 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/classes/' + this.className
             if(mana!== undefined){
@@ -72,13 +75,6 @@ const karta = {
             return ("New deck " + (this.decks.length+1))
         },
         saveDeck(name="default"){
-            //DONE//TODO trzeba zrobić ekran w którym będziemy podawać nazwę deku, może to być mały popup 
-            //DONE//TODO trzeba zrobić ekran do przeglądania nazw istniejących już deków. Po wybraniu nazwy powinien się załadować.
-            //DONE//TODO walidacje jakiegoś dodawania, liczby kart 30 itp -------blokada do 30 i max 2 duplikaty, ale problem bo 2 te samy karty są wyswietlane na liscie dostepnych 
-            //DONE//TODO Button do usunięcia karty z decku bo na razie jest to zrobione na luzie
-            //TODO dodatkowe ekran z szczegółowym wyświetleniem informacji na temat karty
-            //TODO usuwanie chyba usuwa duzo naraz nwm xd
-            //TODO można zrobić wyszukiwanie poprzez nazwę, ale nie trzeba
             this.getDecks()
             let DeckName = prompt("Please enter deck name",this.generateName());
             name = DeckName;            
@@ -118,7 +114,27 @@ const karta = {
                 }
             }
             localStorage.decks = JSON.stringify(this.decks)
+        },
+        search(e){
+            e.preventDefault()
+            if(this.searchName == null || this.searchName == ""){                
+                this.getCards()
+            }
+            let url= 'https://omgvamp-hearthstone-v1.p.rapidapi.com/cards/' + this.searchName
+            fetch( url , options)
+			.then(response => response.json())
+            .then(response => function(){
+                if(Array.isArray(response))
+                    response = response.filter(card => card.hasOwnProperty('img'))
+                    return response
+            }())
+			.then(response => {
+                this.cards = response
+                console.log(response)
+            })
+			.catch(err => console.error(err));
         }
+
 	},
 	template: `
     <div class="top">
@@ -162,6 +178,21 @@ const karta = {
                 <img src="https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/icon_mana_68x68_@2x-b6ecc2a45a3440ac6cba07297306fbb64d9a224bc12a281224a091aaf92a73da2d0036e6eed920f74a957660354bfafe7831fc291aad49867d04b427737c6e3a.png">
                 <p>{{n-1}}</p>
             </div>
+            <img class="search search-container" src="https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/search_left-3cb561cf585e6b6aded5dca35f8c16b3450db50cf6146e8699bd9a12117eede0b0e437db488e0a499755f2a442229c1c633522a26b08138350140aebab05ec31.png">
+                <form v-on:submit="search" class="search">
+                    <input id="searchInput" v-model="searchName" type="search" placeholder="Search">
+                </form>
+            <img class="search" src="https://d2q63o9r0h0ohi.cloudfront.net/images/card-gallery/search_right-9e22f78542b7f45c1fbffb80d6fe8f54bdb3bf5ba2972d0d20ce586b86e5b896a79bd9dd811dd0a846253db72c4821bf53aa0f3ea2add1efec8e374e9a62497d.png">
+            
+            <div id="reset-button" @click="getCards(undefined)" class="hs-wrapper gold">
+            <a class="hs-button gold">
+                <span class="hs-border gold">
+                    <span class="hs-text gold">
+                        Reset
+                    </span>
+                </span>
+            </a>
+        </div>
         </div>
 
             <div class="element" v-for="c in cards" @click="addCardToDeck(c)">
