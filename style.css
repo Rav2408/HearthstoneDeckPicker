@@ -160,6 +160,8 @@ form {
 }
 
 .right-panel {
+        background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/nav/newNav/dropdown-706c3aa7ad824abbd8733023a5a64dc463ebf84063e7cbe0da0236f225ed6eaea8579af3066757677cd00874cf7ff686781362c025a24ccb8a7c16a95bd55dc1.png");
+    background-size: cover;
     width: 20%;   
     height: calc(100vh - 194px);
     top: 100px;
@@ -168,14 +170,21 @@ form {
 }
 
 .deck-menu {
-    /* background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/nav/newNav/sidebar_bg-c8baba20aa1d1644a4e7280e7dbe30240e29a0ce0bd239f758aabc8ab6548fa83bc276c10454f21266c0f1e63c8a68a487d706e5cb808a9f788c85278e488f0a.png"); */
-    background-image: url("https://d2vkoy1na2a6o6.cloudfront.net/images/nav/newNav/dropdown-706c3aa7ad824abbd8733023a5a64dc463ebf84063e7cbe0da0236f225ed6eaea8579af3066757677cd00874cf7ff686781362c025a24ccb8a7c16a95bd55dc1.png");
-    background-size: cover;
-    padding-top: 25%;
+    margin-top: 20%;
     overflow-y: scroll; 
-    height: 100%;
+    height: 80%;
     background-repeat:initial;
 
+}
+
+#counter {
+    margin: 0;
+    padding-bottom: 15%;
+    position: absolute;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    font-size: 30px; 
 }
 
 .element {

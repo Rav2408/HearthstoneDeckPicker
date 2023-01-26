@@ -202,6 +202,7 @@ const karta = {
 
         <div class= "right-panel">
             <div class="deck-menu">
+                <p id="counter">{{deckCounter()}}</p>
                 <div v-for="d in deck" class="list-elem options-on-hover" >
                     <p class="list-elem-cost">{{ d.cost }}</p> 
                     <p class="list-elem-name">{{ d.name }}</p> 
